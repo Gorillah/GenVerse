@@ -19,12 +19,14 @@ import Loader from "@/components/Loader";
 import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
+import { useProModal } from "@/hooks/useProModal";
 
 export default function ConversationPage() {
   const { toast } = useToast();
 
   const router = useRouter();
 
+  const proModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -43,9 +45,7 @@ export default function ConversationPage() {
         content: values.prompt,
       };
       const newMessages = [...messages, userMessage];
-      console.log("messages", messages);
-      console.log("newMessages", newMessages);
-      console.log("userMessage", userMessage);
+
       const res = await axios.post("/api/conversation", {
         messages: newMessages,
       });
@@ -54,9 +54,10 @@ export default function ConversationPage() {
       toast({
         title: "Success",
       });
-    } catch (error) {
-      //TODO: OPEN PREVIEW MODAL
-      console.log(error);
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        proModal.onOpen();
+      }
       toast({
         title: "Error",
         description: "Something went wrong",
@@ -66,7 +67,7 @@ export default function ConversationPage() {
       router.refresh();
     }
   };
-  console.log(messages);
+
   return (
     <div>
       <Heading

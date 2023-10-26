@@ -13,8 +13,13 @@ import {
 } from "@/components/ui/sheet";
 import Sidebar from "./Sidebar";
 
-export default function MobileSidebar() {
-
+export default function MobileSidebar({
+  apiLimitCount,
+  isPro = false,
+}: {
+  apiLimitCount: number;
+  isPro?: boolean;
+}) {
   // FIX REHYDRATION
   const [isMounted, setIsMounted] = React.useState(false);
   useEffect(() => {
@@ -24,13 +29,11 @@ export default function MobileSidebar() {
 
   return (
     <Sheet>
-      <SheetTrigger>
-        <Button variant={"ghost"} size={"icon"} className="md:hidden">
-          <Menu />
-        </Button>
+      <SheetTrigger className="md:hidden relative w-8 h-8">
+        <Menu className="w-full h-full" />
       </SheetTrigger>
       <SheetContent side={"left"} className="p-0">
-        <Sidebar />
+        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       </SheetContent>
     </Sheet>
   );

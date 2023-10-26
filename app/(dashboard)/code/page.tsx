@@ -20,12 +20,14 @@ import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
 import ReactMarkdown from "react-markdown";
+import { useProModal } from "@/hooks/useProModal";
 
 export default function CodePage() {
   const { toast } = useToast();
 
   const router = useRouter();
 
+  const proModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -52,9 +54,11 @@ export default function CodePage() {
       });
       setMessages((prev) => [...prev, userMessage, res.data]);
       form.reset();
-    } catch (error) {
-      //TODO: OPEN PREVIEW MODAL
-      console.log(error);
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        proModal.onOpen();
+      }
+
       toast({
         title: "Error",
         description: "Something went wrong",

@@ -1,0 +1,1 @@
+ALTER TABLE `user_api_limit` ADD CONSTRAINT `user_api_limit_user_id_unique2` UNIQUE(`user_id`);

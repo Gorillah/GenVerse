@@ -1,0 +1,83 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1698264633459,
+      "tag": "0000_small_timeslip",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1698275355218,
+      "tag": "0001_tough_iron_lad",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1698276506455,
+      "tag": "0002_moaning_joshua_kane",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1698329941589,
+      "tag": "0003_burly_speedball",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1698330017293,
+      "tag": "0004_futuristic_jimmy_woo",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1698330156044,
+      "tag": "0005_sturdy_psynapse",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1698330190223,
+      "tag": "0006_swift_meteorite",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1698330229367,
+      "tag": "0007_sad_norman_osborn",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1698330436973,
+      "tag": "0008_supreme_revanche",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1698331393135,
+      "tag": "0009_little_random",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1698331430072,
+      "tag": "0010_magical_krista_starr",
+      "breakpoints": true
+    }
+  ]
+}
