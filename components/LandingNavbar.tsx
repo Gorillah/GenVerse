@@ -15,13 +15,15 @@ export default function LandingNavbar() {
   const { isSignedIn } = useAuth();
   return (
     <div className="p-4 bg-transparent flex items-center justify-between">
-      <Link href={"/"} className="flex items-center">
-        <div className="relative h-10 w-10 mr-2 flex justify-center items-center">
-          <Codesandbox color="white" size={60} />
+      <Link href={"/"} className="flex items-center flex-col">
+        <div className="flex">
+          <div className="relative h-10 w-10 mr-2 flex justify-center items-center">
+            <Codesandbox color="white" size={60} />
+          </div>
+          <h1 className={cn("text-2xl font-bold text-white", font.className)}>
+            GenVerse
+          </h1>
         </div>
-        <h1 className={cn("text-2xl font-bold text-white", font.className)}>
-          GenVerse
-        </h1>
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>

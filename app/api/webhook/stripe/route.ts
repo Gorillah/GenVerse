@@ -29,12 +29,6 @@ export async function POST(req: Request) {
   if (!session?.metadata)
     return new NextResponse("Metadata is Not found", { status: 404 });
 
-  // console.log(session);
-  // if (!session.subscription) {
-  //   console.error("Subscription ID is missing in the session object.");
-  //   return new NextResponse("Subscription ID is required", { status: 400 });
-  // }
-
   if (event.type === "checkout.session.completed") {
     console.log("checkout.session.completed");
     const subscription = await stripe.subscriptions.retrieve(

@@ -27,8 +27,6 @@ export async function POST(req: Request) {
       return new NextResponse("Free trial limit reached", { status: 403 });
     }
 
-    if (!isPro) await incrementApiLimit();
-
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages,
