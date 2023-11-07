@@ -24,8 +24,10 @@ export default function Heading({
           <Icon className={cn("h-10 w-10", iconColor)} />
         </div>
         <div>
-          <h2 className="text-3xl font-bold ">{label}</h2>
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <h2 className="text-3xl font-bold text-white">{label}</h2>
+          <p className="text-sm text-muted-foreground text-white/80">
+            {description}
+          </p>
         </div>
       </div>
     </div>

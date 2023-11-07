@@ -62,8 +62,8 @@ export default function Dashboard() {
   const router = useRouter();
   return (
     <div>
-      <div className="mb-8 space-y-3">
-        <h2 className="text-2xl md:text-3xl text-center font-bold">
+      <div className="mb-8 space-y-3 text-white">
+        <h2 className="text-2xl md:text-3xl text-center font-bold text-white">
           Explore the power of AI
         </h2>
         <p className="text-sm text-muted-foreground text-center md:text-lg">

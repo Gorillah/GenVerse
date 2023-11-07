@@ -22,7 +22,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
 import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { useProModal } from "@/hooks/useProModal";
@@ -95,7 +94,7 @@ export default function ImagePage() {
                   <FormControl className="m-0 p-0">
                     <Input
                       {...field}
-                      className="border-0 outline-none focus-visible:ring-transparent"
+                      className="border-0 outline-none focus-visible:ring-transparent px-2"
                       disabled={isLoading}
                       placeholder="A picture of a a horse in a field"
                     />

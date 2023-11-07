@@ -13,12 +13,8 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
-import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
 import Empty from "@/components/Empty";
 import Loader from "@/components/Loader";
-import { cn } from "@/lib/utils";
-import UserAvatar from "@/components/UserAvatar";
-import BotAvatar from "@/components/BotAvatar";
 import { useProModal } from "@/hooks/useProModal";
 
 export default function MusicPage() {
@@ -83,7 +79,7 @@ export default function MusicPage() {
                   <FormControl className="m-0 p-0">
                     <Input
                       {...field}
-                      className="border-0 outline-none focus-visible:ring-transparent"
+                      className="border-0 outline-none focus-visible:ring-transparent px-2"
                       disabled={isLoading}
                       placeholder="Ask me anything..."
                     />

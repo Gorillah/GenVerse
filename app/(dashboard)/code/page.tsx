@@ -46,9 +46,6 @@ export default function CodePage() {
         content: values.prompt,
       };
       const newMessages = [...messages, userMessage];
-      console.log("messages", messages);
-      console.log("newMessages", newMessages);
-      console.log("userMessage", userMessage);
       const res = await axios.post("/api/code", {
         messages: newMessages,
       });
@@ -68,7 +65,6 @@ export default function CodePage() {
       router.refresh();
     }
   };
-  console.log(messages);
   return (
     <div>
       <Heading
@@ -91,7 +87,7 @@ export default function CodePage() {
                   <FormControl className="m-0 p-0">
                     <Input
                       {...field}
-                      className="border-0 outline-none focus-visible:ring-transparent"
+                      className="border-0 outline-none focus-visible:ring-transparent px-2"
                       disabled={isLoading}
                       placeholder="Simple toggle button using NextJs"
                     />

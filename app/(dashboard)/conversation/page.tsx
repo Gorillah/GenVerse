@@ -90,7 +90,7 @@ export default function ConversationPage() {
                   <FormControl className="m-0 p-0">
                     <Input
                       {...field}
-                      className="border-0 outline-none focus-visible:ring-transparent"
+                      className="border-0 outline-none focus-visible:ring-transparent px-2"
                       disabled={isLoading}
                       placeholder="Ask me anything..."
                     />
